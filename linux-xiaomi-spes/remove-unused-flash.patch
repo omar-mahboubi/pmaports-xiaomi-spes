@@ -1,0 +1,19 @@
+diff --git a/arch/arm64/boot/dts/vendor/qcom/khaje-idp-pm7250b.dtsi b/arch/arm64/boot/dts/vendor/qcom/khaje-idp-pm7250b.dtsi
+index 7008c7e9d..4e3baae5e 100644
+--- a/arch/arm64/boot/dts/vendor/qcom/khaje-idp-pm7250b.dtsi
++++ b/arch/arm64/boot/dts/vendor/qcom/khaje-idp-pm7250b.dtsi
+@@ -125,14 +125,6 @@
+ 	gpios = <&pm7250b_gpios 4 0>;
+ };
+ 
+-&led_flash_rear_aux {
+-	gpios = <&pm7250b_gpios 4 0>;
+-};
+-
+-&led_flash_rear_aux2 {
+-	gpios = <&pm7250b_gpios 4 0>;
+-};
+-
+ &pm7250b_charger {
+ 	dpdm-supply = <&usb2_phy0>;
+ 

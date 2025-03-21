@@ -1,0 +1,13 @@
+diff --git a/arch/arm64/boot/dts/vendor/qcom/Makefile b/arch/arm64/boot/dts/vendor/qcom/Makefile
+index 8155403c1..5e55ec271 100644
+--- a/arch/arm64/boot/dts/vendor/qcom/Makefile
++++ b/arch/arm64/boot/dts/vendor/qcom/Makefile
+@@ -384,7 +384,7 @@ dtb-$(CONFIG_ARCH_KHAJE) += khaje-idp.dtb \
+ 		khajeg-idps-display-90hz.dtb \
+ 		spes-khaje-idp-nopmi.dtb
+ endif
+-
++dtb-$(CONFIG_ARCH_QCOM) += khaje.dtb
+ ifeq ($(CONFIG_BUILD_ARM64_DT_OVERLAY),y)
+         dtbo-$(CONFIG_ARCH_SDM660) += \
+                 sdm660-mtp-external-codec-overlay.dtbo \

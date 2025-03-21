@@ -1,0 +1,58 @@
+# Reference: <https://postmarketos.org/vendorkernel>
+# Kernel config based on: arch/arm64/configs/(CHANGEME!)
+
+pkgname=linux-xiaomi-spes
+pkgver=4.19.254
+pkgrel=0
+pkgdesc="Xiaomi Redmi Note 11 kernel fork"
+arch="aarch64"
+_carch="arm64"
+_flavor="xiaomi-spes"
+url="https://kernel.org"
+license="GPL-2.0-only"
+options="!strip !check !tracedeps pmb:cross-native"
+makedepends="
+	bash
+	bc
+	bison
+	devicepkg-dev
+	findutils
+	flex
+	openssl-dev
+	perl
+	clang
+	xz
+	python3
+"
+
+# Source
+_repository="halium-kernel"
+_commit="e69a16b98b950b967f2912c1ed3d904f212f1d4d"
+_config="config-$_flavor.$arch"
+source="
+	$pkgname-$_commit.tar.gz::https://github.com/halium-spes/$_repository/archive/$_commit.tar.gz
+	$_config
+	fix-khaje-dts.patch
+"
+builddir="$srcdir/$_repository-$_commit"
+_outdir="out"
+
+prepare() {
+	default_prepare
+	. downstreamkernel_prepare
+}
+
+build() {
+	unset LDFLAGS
+	make O="$_outdir" ARCH="$_carch" CC="clang" HOSTCC="clang" \
+		KBUILD_BUILD_VERSION="$((pkgrel + 1 ))-postmarketOS"
+}
+
+package() {
+	downstreamkernel_package "$builddir" "$pkgdir" "$_carch" \
+		"$_flavor" "$_outdir"
+		make dtbs_install CC="clang" O="$_outdir" ARCH="$_carch" INSTALL_DTBS_PATH="$pkgdir"/boot/dtbs
+}
+
+sha512sums="
+"

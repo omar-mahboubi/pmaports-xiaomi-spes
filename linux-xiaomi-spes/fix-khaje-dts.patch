@@ -1,0 +1,50 @@
+diff --git a/arch/arm64/boot/dts/vendor/qcom/Makefile b/arch/arm64/boot/dts/vendor/qcom/Makefile
+index b3450e44a..e962aaec3 100644
+--- a/arch/arm64/boot/dts/vendor/qcom/Makefile
++++ b/arch/arm64/boot/dts/vendor/qcom/Makefile
+@@ -344,44 +344,7 @@ spes-khaje-idp-nopmi-overlay.dtbo-base := khaje.dtb
+ spesn-khaje-idp-nopmi-overlay.dtbo-base := khaje.dtb
+ spes-sm5602-khaje-idp-nopmi-overlay.dtbo-base := khaje.dtb
+ else
+-dtb-$(CONFIG_ARCH_KHAJE) += khaje-idp.dtb \
+-		khaje-qrd.dtb \
+-		khaje-qrd-hvdcp3p5.dtb \
+-		khaje-qrd-nowcd9375.dtb \
+-		khaje-idp-nopmi.dtb \
+-		khaje-idp-usbc.dtb \
+-		khaje-idp-pm8010.dtb \
+-		khaje-qrd-nopmi.dtb \
+-		khaje-idps-display-90hz.dtb \
+-		khaje-atp.dtb \
+-		khajep-atp.dtb \
+-		khajep-qrd.dtb \
+-		khajep-qrd-hvdcp3p5.dtb \
+-		khajep-idps-display-90hz.dtb \
+-		khajep-idp-nopmi.dtb \
+-		khajep-idp-usbc.dtb \
+-		khajep-idp-pm8010.dtb \
+-		khajep-qrd-nowcd9375.dtb \
+-		khajep-qrd-nopmi.dtb \
+-		khajeq-atp.dtb \
+-		khajeq-idps-display-90hz.dtb \
+-		khajeq-idp-nopmi.dtb \
+-		khajeq-idp-usbc.dtb \
+-		khajeq-idp-pm8010.dtb \
+-		khajeq-qrd.dtb \
+-		khajeq-qrd-nowcd9375.dtb \
+-		khajeq-qrd-hvdcp3p5.dtb \
+-		khajeq-qrd-nopmi.dtb \
+-		khajeg-atp.dtb \
+-		khajeg-qrd.dtb \
+-		khajeg-qrd-nowcd9375.dtb \
+-		khajeg-qrd-hvdcp3p5.dtb \
+-		khajeg-qrd-nopmi.dtb \
+-		khajeg-idp.dtb \
+-		khajeg-idp-nopmi.dtb \
+-		khajeg-idp-usbc.dtb \
+-		khajeg-idp-pm8010.dtb \
+-		khajeg-idps-display-90hz.dtb
++dtb-$(CONFIG_ARCH_KHAJE) += khaje.dtb
+ endif
+ 
+ ifeq ($(CONFIG_BUILD_ARM64_DT_OVERLAY),y)
